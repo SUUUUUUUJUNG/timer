@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Simple Timer</title>
+    <script type="text/javascript">
+        let timer;
+        let seconds = 0;
+
+        function startTimer() {
+            if (!timer) {
+                timer = setInterval(() => {
+                    seconds++;
+                    document.getElementById('timer').innerText = seconds;
+                }, 1000);
+            }
+        }
+
+        function stopTimer() {
+            clearInterval(timer);
+            timer = null;
+        }
+
+        function resetTimer() {
+            stopTimer();
+            seconds = 0;
+            document.getElementById('timer').innerText = seconds;
+        }
+    </script>
+</head>
+<body>
+<h1>Simple Timer</h1>
+<div>
+    <h2 id="timer" th:text="${time}">0</h2>
+    <button onclick="startTimer()">Start</button>
+    <button onclick="stopTimer()">Stop</button>
+    <button onclick="resetTimer()">Reset</button>
+</div>
+</body>
+</html>

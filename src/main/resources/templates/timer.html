@@ -2,6 +2,63 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Simple Timer</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f5;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #333;
+        }
+
+        #timer {
+            font-size: 4em;
+            color: #007acc;
+            margin: 20px;
+        }
+
+        button {
+            font-size: 1em;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #007acc;
+            color: white;
+        }
+
+        button:active {
+            background-color: #005f99;
+        }
+
+        button:first-child {
+            background-color: #28a745;
+            color: white;
+        }
+
+        button:nth-child(2) {
+            background-color: #ffc107;
+            color: white;
+        }
+
+        button:last-child {
+            background-color: #dc3545;
+            color: white;
+        }
+    </style>
     <script type="text/javascript">
         let timer;
         let seconds = 0;
